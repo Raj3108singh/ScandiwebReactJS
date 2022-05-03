@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+}
+
+.headerName {
+  margin: 0 auto;
+  width: 90%;
+  color: #1d1f22;
+  text-transform: capitalize;
+}
+
+.cards {
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+.card {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  text-decoration: none;
+}
+.card__image {
+  object-fit: contain;
+  display: block;
+  height: 338px;
+  width: 100%;
+}
+
+.card__content {
+  line-height: 28.8px;
+  font-weight: 300;
+  font-size: 18px;
+  color: #1d1f22;
+}
+.card_info {
+  font-weight: 500;
+  font-size: 18px;
+  color: #1d1f22;
+}

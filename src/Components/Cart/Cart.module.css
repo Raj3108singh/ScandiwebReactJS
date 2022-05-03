@@ -1,0 +1,133 @@
+.cart-bcg {
+  margin: 0;
+  padding: 0;
+  background: rgba(57, 55, 72, 0.22);
+  height: 100vh;
+  display: flex;
+  justify-content: end;
+  margin-top: 0px;
+}
+
+.CartContainer {
+  background-color: #ffffff;
+  width: 90%;
+  margin: auto;
+}
+
+.Header {
+  /*margin: auto;
+  width: 90%;*/
+  height: 15%;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+.Heading {
+  font-size: 20px;
+  font-family: ‘Open Sans’;
+  font-weight: 700;
+  color: #2f3841;
+  margin-right: 5px;
+}
+.Action {
+  font-size: 14px;
+  font-family: ‘Open Sans’;
+  font-weight: 600;
+  color: #e44c4c;
+  cursor: pointer;
+  border-bottom: 1px solid #e44c4c;
+}
+.CartItems {
+  /*margin: auto;
+  width: 90%;*/
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.about {
+  height: 100%;
+  width: 40%;
+}
+
+.title {
+  padding-top: 5px;
+  line-height: 25px;
+  font-size: 30px;
+  font-family: "Raleway" sans-serif;
+  font-weight: 600;
+  color: #1d1f22;
+}
+.subtitle {
+  font-size: 24px;
+  font-family: "Raleway";
+  font-weight: 700;
+  color: #1f1d22;
+}
+
+.span_attri {
+  font-family: Roboto Condensed;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sizeBtn {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.btn {
+  /*width: 24px;*/
+  height: 24px;
+
+  border: 1px solid #1d1f22;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #202020;
+  cursor: pointer;
+}
+.counter {
+  font-size: 20px;
+  font-family: ‘Open Sans’;
+  font-weight: 900;
+  text-align: center;
+  color: #202020;
+  width: 3%;
+}
+.image-box {
+  width: 300px;
+  text-align: center;
+}
+.CartTotal {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+
+  color: #1d1f22;
+  font-size: 16px;
+  /*font-weight: 700;*/
+}
+
+.TotalString {
+  font-weight: 500;
+}
+.TotalAmount {
+  font-weight: 700;
+}
+
+.Cartbtn {
+  width: 140px;
+  margin: 20px 0px;
+  background: #5ece7b;
+  font-family: "Raleway";
+  color: #fff;
+  border: none;
+  width: 140px;
+}

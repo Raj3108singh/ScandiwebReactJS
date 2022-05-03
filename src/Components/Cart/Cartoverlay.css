@@ -1,0 +1,142 @@
+.cartOverlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 80px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  z-index: 1000;
+}
+
+.Cart-Container {
+  /*height: 667px;*/
+  width: 325px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 25px 40px #1687d933;
+  overflow-y: scroll;
+  height: calc(100% - 5px);
+  margin-right: 20px;
+}
+
+.cartOverlay::after {
+  content: "";
+  display: block;
+  height: 10000px;
+}
+
+.Header {
+  margin: auto;
+  width: 90%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+}
+.Heading {
+  font-size: 20px;
+  font-family: ‘Open Sans’;
+  font-weight: 700;
+  color: #2f3841;
+  margin-right: 5px;
+}
+.Action {
+  font-size: 14px;
+  font-family: ‘Open Sans’;
+  font-weight: 600;
+  color: #e44c4c;
+  cursor: pointer;
+  border-bottom: 1px solid #e44c4c;
+}
+.Cart-Items {
+  margin: auto;
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.about {
+  height: 100%;
+  width: 40%;
+}
+
+.title {
+  padding-top: 5px;
+  line-height: 25px;
+  font-size: 16px;
+  font-family: "Raleway" sans-serif;
+  font-weight: 300;
+  color: #202020;
+}
+.subtitle {
+  font-size: 18px;
+  font-family: ‘Open Sans’;
+  font-weight: 600;
+  color: #909090;
+}
+.sizeBtn {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.btn {
+  height: 24px;
+  margin: 5px;
+  border: 1px solid #1d1f22;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #202020;
+  cursor: pointer;
+}
+.counter {
+  font-size: 20px;
+  font-family: ‘Open Sans’;
+  font-weight: 900;
+  text-align: center;
+  color: #202020;
+  width: 13%;
+}
+.image-box {
+  width: 30%;
+  text-align: center;
+}
+.CartTotal {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  color: #1d1f22;
+  font-size: 16px;
+}
+
+.TotalString {
+  font-weight: 500;
+}
+.TotalAmount {
+  font-weight: 700;
+}
+.Cartbtn {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  color: #1d1f22;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.checkout {
+  width: 140px;
+  background-color: #5ece7b;
+  color: #fff;
+  border: 1px;
+  margin-left: 5px;
+}
