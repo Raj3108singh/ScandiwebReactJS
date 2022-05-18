@@ -5,10 +5,7 @@ import { addproduct, removeproduct } from "../../Store/CartSlice";
 import "./Cartoverlay.css";
 
 class Cartoverlay extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log(this.props);
-  }
+  
   addProduct(item) {
     this.props.addproduct(item);
   }
@@ -54,15 +51,7 @@ class Cartoverlay extends React.Component {
                       {item.attributes.map((el, ind) => {
                         if (el.id === "Color") {
                           return (
-                            <button
-                              key={index}
-                              style={{
-                                background: `${el.value}`,
-                                width: "30px",
-                                height: "30px",
-                                margin: "5px",
-                              }}
-                            ></button>
+                            <button key={index} className="btn" style={{ background: `${el.value}` }} />
                           );
                         }
                         return (
@@ -76,22 +65,12 @@ class Cartoverlay extends React.Component {
                       })}
                     </div>
                     <div className="counter">
-                      <div
-                        className="btn"
-                        onClick={() => this.addProduct(item)}
-                      >
-                        +
-                      </div>
+                      <div className="btn" onClick={() => this.addProduct(item)} >+</div>
                       <div className="count">{item.quantity}</div>
-                      <div
-                        className="btn"
-                        onClick={() => this.removeProduct(item)}
-                      >
-                        -
-                      </div>
+                      <div   className="btn" onClick={() => this.removeProduct(item)}> - </div>
                     </div>
                     <div className="image-box">
-                      <img src={`${item.gallery}`} />
+                      <img src={`${item.gallery[0]}`} alt="" />
                     </div>
                   </div>
                 );
@@ -106,10 +85,7 @@ class Cartoverlay extends React.Component {
               </div>
               <div className="Cartbtn">
                 <NavLink to={`/cart`}>
-                  <button
-                    style={{ width: "140px" }}
-                    onClick={this.props.clickHandler}
-                  >
+                  <button  className="view_bag" onClick={this.props.clickHandler}>
                     View Bag
                   </button>
                 </NavLink>

@@ -1,4 +1,7 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import CurrencyQuery from "../Query/query.json";
+
+const query = CurrencyQuery.Currency;
 
 const initialState = {
   Currencies: [],
@@ -26,14 +29,7 @@ export function fetchCurrencies() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          query: `
- {
-  currencies{
-    label
-    symbol
-  }
-}
-`,
+          query
         }),
       });
       const { data } = await res.json();

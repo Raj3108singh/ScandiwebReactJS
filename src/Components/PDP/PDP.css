@@ -1,5 +1,6 @@
 .pdp-container {
   width: 100%;
+  
 }
 
 .row {
@@ -7,12 +8,16 @@
   width: 90%;
   margin: auto;
   justify-content: space-between;
+  max-height: calc(100%-85px);
 }
 .col-left {
   width: 10%;
+  overflow-y: auto;
+  height: 85vh;
+  
 }
 .col-left img {
-  margin: 10px;
+  margin: 10px 0px;
 }
 .col-right {
   display: flex;
@@ -22,6 +27,7 @@
 .col-1-right {
   margin-right: 100px;
   position: relative;
+  height: 90vh;
 }
 
 .col-2-right {
@@ -39,7 +45,7 @@
 
 .colorSelection {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .colorSelection span {
@@ -47,7 +53,9 @@
   height: 25px;
   margin: 3px;
 }
-
+.margin-button{
+  margin:5px;
+}
 .addToCart {
   width: 292px;
   height: 52px;
@@ -68,4 +76,14 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+}
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor:not-allowed
+}
+button:disabled :hover{
+  cursor:not-allowed;
 }

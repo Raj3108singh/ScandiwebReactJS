@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   products: [],
@@ -42,9 +42,9 @@ export const cartSlice = createSlice({
           //if attribute matching increase the quantity and total amount for that product id
           const existingObjwithSameAttri = [];
           let isExistingObjwithSameAttri = false;
-          const product = existingProduct.forEach((el) => {
+           existingProduct.forEach((el) => {
             const arr = el.attributes.filter(
-              (el1) =>
+              (el1) =>  
                 !action.payload.attributes.find(
                   (item) => item.id === el1.id && item.value === el1.value
                 )
@@ -79,6 +79,8 @@ export const cartSlice = createSlice({
           }
         }
       }
+      
+
     },
     removeproduct: (state, action) => {
       //Find the index of the existing object

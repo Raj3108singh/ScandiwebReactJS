@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import { removeproduct, addproduct } from "../../Store/CartSlice";
+import ImageSlider from "../../UI/ImageSlider";
 
 import classes from "./Cart.module.css";
 
@@ -12,9 +14,9 @@ class Cart extends React.Component {
     this.props.addproduct(item);
   }
 
-  render() {
+  render() {    
     return (
-      <div>
+      <div>       
         <div className={classes.CartContainer}>
           <div className={classes.Header}>
             <h3 className={classes.Heading}>Cart</h3>
@@ -43,22 +45,12 @@ class Cart extends React.Component {
                     })}
                   </div>
                   <div className={classes.counter}>
-                    <div
-                      className={classes.btn}
-                      onClick={() => this.additem(item)}
-                    >
-                      +
-                    </div>
+                    <div className={classes.btn} onClick={() => this.additem(item)}> + </div>
                     <div className={classes.count}>{item.quantity}</div>
-                    <div
-                      className={classes.btn}
-                      onClick={() => this.removeitem(item)}
-                    >
-                      -
-                    </div>
+                    <div className={classes.btn} onClick={() => this.removeitem(item)}> -  </div>
                   </div>
                   <div className={classes.imageBox}>
-                    <img src={item.gallery} style={{ width: "200px" }} alt="" />
+                    <ImageSlider gallery={item.gallery}></ImageSlider>                   
                   </div>
                 </div>
                 <hr></hr>

@@ -1,4 +1,7 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import productListQuery from "../Query/query.json"
+
+const query = productListQuery.productList;
 
 const initialState = {
   name: "",
@@ -8,6 +11,7 @@ const initialState = {
       name: "",
       inStock: "",
       gallery: [],
+      attributes:[],
       price: { currency: { label: "", symbol: "" }, amount: "" },
       brand: "",
     },
@@ -20,17 +24,19 @@ export const ProductsList = createSlice({
   initialState,
   reducers: {
     updateProductList(state, action) {
+      
       state.name = action.payload.name;
       const products = action.payload.products.map((item) => {
         const id = item.id;
         const name = item.name;
         const inStock = item.inStock;
-        const gallery = item.gallery[0];
+        const gallery = item.gallery;
+        const attributes = item.attributes;
         const price = item.prices.find(
           (el) => el.currency.label === state.currencySelected.label
         );
         const brand = item.brand;
-        return { id, name, inStock, gallery, price, brand };
+        return { id, name, inStock, gallery,attributes, price, brand };
       });
       state.products = products;
     },
@@ -48,6 +54,9 @@ export const { updateProductList, setparam, setcurrency } =
 export default ProductsList.reducer;
 
 export function fetchProductsList(param) {
+  console.log(query)
+  const variables = {title :param}
+  console.log(variables)
   return async function fetchProductsThunk(dispatch, getState) {
     dispatch(setparam(param));
     try {
@@ -56,30 +65,7 @@ export function fetchProductsList(param) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          query: `
- {
-  category(input:{title:"${param}"}){
-    name
-    products{ 
-          id
-        name
-        inStock
-        gallery
-        prices  {
-currency { 
-label
-symbol
-}
-amount
-}
-        brand
-    }
-    
-  }
-}
-`,
-        }),
+        body: JSON.stringify({ query, variables  }),
       });
       const { data } = await res.json();
 

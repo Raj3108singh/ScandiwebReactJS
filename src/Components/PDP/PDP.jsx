@@ -1,4 +1,6 @@
 import React from "react";
+import DOMPurify from 'dompurify';
+//import {parse} from 'html-react-parser';
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -73,7 +75,7 @@ class PDP extends React.Component {
         price: this.props.selector.productDetail.prices,
         itemAmount: Number(this.props.selector.productDetail.prices.amount),
         quantity: 1,
-        gallery: this.props.selector.productDetail.defaultImg,
+        gallery: this.props.selector.productDetail.gallery,
       };
       this.props.addproduct(obj);
       this.setState({ attri: [] });
@@ -82,6 +84,7 @@ class PDP extends React.Component {
   }
 
   render() {
+    console.log(this.props.selector)
     return (
       <div className="small-container">
         <div className="row">
@@ -114,28 +117,20 @@ class PDP extends React.Component {
                         {el.items.map((item, index) => {
                           if (el.id === "Color") {
                             return (
-                              <button
-                                onClick={() =>
-                                  this.attributeSelection(el, item)
-                                }
+                              <button onClick={() => this.attributeSelection(el, item)}
                                 key={index}
+                                className="btn"
                                 style={{
                                   background: `${item.value}`,
-                                  width: "30px",
-                                  height: "30px",
-                                  margin: "5px",
+                                 
                                 }}
                               ></button>
                             );
                           }
                           return (
-                            <button
-                              style={{
-                                margin: "5px",
-                              }}
+                            <button className="margin-button"                              
                               key={index}
-                              onClick={() => this.attributeSelection(el, item)}
-                            >
+                              onClick={() => this.attributeSelection(el, item)}>
                               {item.displayValue}
                             </button>
                           );
@@ -154,21 +149,15 @@ class PDP extends React.Component {
                 </div>
               </div>
               <div>
-                <button
+                <button 
+                  disabled = {!this.props.selector.productDetail.inStock}
                   className="addToCart"
-                  onClick={this.AdditemtoCart.bind(this)}
-                >
+                  onClick={this.AdditemtoCart.bind(this)}>
                   Add to Cart
                 </button>
               </div>
-              <div>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: this.props.selector.productDetail.description,
-                  }}
-                ></div>
-              </div>
-            </div>
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(this.props.selector.productDetail.description),}}></div>                                                 
+               </div>
           </div>
         </div>
       </div>

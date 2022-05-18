@@ -81,12 +81,13 @@
 }
 .sizeBtn {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .btn {
-  height: 24px;
+  min-width:40px;
+  min-height: 40px;
   margin: 5px;
   border: 1px solid #1d1f22;
   box-sizing: border-box;
@@ -139,4 +140,7 @@
   color: #fff;
   border: 1px;
   margin-left: 5px;
+}
+.view_bag{
+  width: "140px"
 }

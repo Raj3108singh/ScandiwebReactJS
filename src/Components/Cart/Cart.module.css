@@ -4,14 +4,14 @@
   background: rgba(57, 55, 72, 0.22);
   height: 100vh;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-top: 0px;
 }
 
 .CartContainer {
   background-color: #ffffff;
   width: 90%;
-  margin: auto;
+  margin: 50px auto;
 }
 
 .Header {
@@ -75,7 +75,7 @@
 
 .sizeBtn {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 

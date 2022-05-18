@@ -1,4 +1,7 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import ProductDetailQuery from "../Query/query.json"
+
+const query = ProductDetailQuery.ProductDetail
 
 const initialState = {
   productDetail: {
@@ -52,6 +55,7 @@ export const { addDataa, updateDefaultImg, setCurrency, setParam } =
 export default ProductDetailsSlice.reducer;
 
 export function fetchProductDetail(param) {
+  const variables = {id:param.id}
   return async function fetchProductDetailThunk(dispatch, getState) {
     dispatch(setParam(param));
     try {
@@ -60,35 +64,7 @@ export function fetchProductDetail(param) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          query: `
- {
-  product(id:"${param.id}"){
-    		id
-        name
-        inStock
-        gallery
-        description
-    	  category
-    attributes{
-      id
-      name
-      type
-      items{ displayValue
-      value
-      id}
-    }
-    prices  {
-currency { 
-label
-symbol
-}
-      amount
-    }
-  }
-}
-`,
-        }),
+        body: JSON.stringify({ query,variables  }),
       });
       const { data } = await res.json();
 
